@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application;
+package ru.Daniilscram.simple_web_application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,29 +8,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ru.Daniilscram.simple_web_application.domain.Message;
 import ru.Daniilscram.simple_web_application.repository.MessageRepository;
 
-import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
 
     @Autowired
     private MessageRepository messageRepository;
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Map<String, Object> model) {
-        model.put("name", name);
+    @GetMapping("/")
+    public String greeting(Map<String, Object> model) {
         return "greeting";
     }
 
-    @GetMapping
+    @GetMapping("/main")
     public String main(Map<String,Object> map){
         Iterable<Message> messages = messageRepository.findAll();
         map.put("messages", messages);
         return "main";
     }
 
-    @PostMapping("/")
+    @PostMapping("/main")
     public String add(@RequestParam String text, @RequestParam String tag, Map<String,Object> map){
         Message message = new Message(text,tag);
         messageRepository.save(message);
