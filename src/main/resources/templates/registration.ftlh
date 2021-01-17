@@ -1,5 +1,5 @@
 <#import "parts/common.ftlh" as c>
-<#impart "parts/login.ftlh" as l>
+<#import "parts/login.ftlh" as l>
 <@c.page>
 Add new user
 ${message}
