@@ -6,4 +6,6 @@ import ru.Daniilscram.simple_web_application.domain.User;
 public interface UserRepository extends JpaRepository<User,Long> {
 
     User findByUsername(String username);
+
+    User findByActivationCode(String code);
 }

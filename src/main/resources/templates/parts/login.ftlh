@@ -16,6 +16,16 @@
     </label>
     </div>
 
+    <#if isRegisterForm>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"> Email:
+        <div class="col-sm-10">
+        <input type="email" name="email" class="form-control" placeholder = "some@some.com"/>
+        </div>
+        </label>
+        </div>
+    </#if>
+
     <input type="hidden" name="_csrf" value="${_csrf.token}">
     <#if !isRegisterForm>
         <a href="/registration">Add new user</a>
