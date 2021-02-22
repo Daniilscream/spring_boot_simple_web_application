@@ -14,6 +14,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Set;
 
@@ -25,10 +28,17 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Имя пользователя не должно быть пустым")
     private String username;
+    @NotBlank(message = "Пароль не должен быть пустым")
     private String password;
+    @Transient
+    @NotBlank(message = "Подтверждение пароля не должно быть пустым")
+    private String passwordConfirmation;
     private boolean active;
 
+    @Email(message = "email не корректный")
+    @NotBlank(message = "Email не должен быть пустым")
     private String email;
     private String activationCode;
 
@@ -120,5 +130,13 @@ public class User implements UserDetails {
 
     public void setActivationCode(String activationCode) {
         this.activationCode = activationCode;
+    }
+
+    public String getPasswordConfirmation() {
+        return passwordConfirmation;
+    }
+
+    public void setPasswordConfirmation(String passwordConfirmation) {
+        this.passwordConfirmation = passwordConfirmation;
     }
 }

@@ -3,12 +3,14 @@ package ru.Daniilscram.simple_web_application.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.Daniilscram.simple_web_application.domain.User;
 import ru.Daniilscram.simple_web_application.service.UserService;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
@@ -23,9 +25,20 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> map){
+    public String addUser(@Valid User user, BindingResult bindingResult, Model map){
+        if(user.getPassword() != null && !user.getPassword().equals(user.getPasswordConfirmation())){
+            map.addAttribute("passwordError", "Пароли не совпадают");
+        }
+
+        if(bindingResult.hasErrors()){
+            Map<String, String> errors = ControllerUtils.getErrors(bindingResult);
+
+            map.mergeAttributes(errors);
+            return "registration";
+        }
+
         if(!userService.addUser(user)){
-            map.put("message", "Пользователь с таким именем уже существует");
+            map.addAttribute("usernameError", "Пользователь с таким именем уже существует");
             return "registration";
         }
         return "redirect:/login";

@@ -15,13 +15,25 @@
         Добавить сообщение
     </a>
 
-<div class="collapse m-3" id="collapseMessage">
+<div class="collapse m-3 <#if message??>show</#if>" id="collapseMessage">
     <form method="post" enctype="multipart/form-data" class="row g-3">
         <div class="mb-3">
-        <input type="text" name="text" class="form-control" placeholder="Введите сообщение">
+        <input type="text" name="text" class="form-control ${(textError??)?string('is-invalid', '')}"
+        value = "<#if message??>${message.text}</#if>" placeholder="Введите сообщение">
+              <#if textError??>
+              <div class="invalid-feedback">
+                ${textError}
+              </div>
+              </#if>
         </div>
         <div class="mb-3">
-        <input type="text" name="tag" class="form-control" placeholder="Тэг">
+        <input type="text" name="tag" class="form-control ${(tagError??)?string('is-invalid', '')}"
+        value = "<#if message??>${message.tag}</#if>" placeholder="Тэг">
+                      <#if tagError??>
+                      <div class="invalid-feedback">
+                        ${tagError}
+                      </div>
+                      </#if>
         </div>
         <div class="mb-3">
           <input class="form-control" type="file" id="formFile">
@@ -36,9 +48,6 @@
 <div class="row row-cols-3 row-cols-md-2 g-4 m-3">
 <#list messages as message>
         <div class="card my-3" style="width: 18rem;">
-              <#if message.filename??>
-                    <img src="/img/${message.filename}" class="card-img-top">
-              </#if>
             <div class="m-2">
                 <span>${message.text}</span>
                 <i>${message.tag}</i>

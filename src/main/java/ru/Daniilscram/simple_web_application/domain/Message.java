@@ -1,5 +1,7 @@
 package ru.Daniilscram.simple_web_application.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Message {
@@ -15,7 +18,11 @@ public class Message {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
 
+    @NotBlank(message = "Введите сообщение")
+    @Length(max = 2048, message = "Сообщение слишком длинное(не больше 2kb)")
     private String text;
+    @NotBlank(message = "Введите тэг")
+    @Length(max = 255, message = "Сообщение слишком длинное(не больше 255)")
     private String tag;
 
     @ManyToOne(fetch = FetchType.EAGER)
