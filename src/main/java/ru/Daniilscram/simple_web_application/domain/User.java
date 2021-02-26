@@ -32,9 +32,6 @@ public class User implements UserDetails {
     private String username;
     @NotBlank(message = "Пароль не должен быть пустым")
     private String password;
-    @Transient
-    @NotBlank(message = "Подтверждение пароля не должно быть пустым")
-    private String passwordConfirmation;
     private boolean active;
 
     @Email(message = "email не корректный")
@@ -130,13 +127,5 @@ public class User implements UserDetails {
 
     public void setActivationCode(String activationCode) {
         this.activationCode = activationCode;
-    }
-
-    public String getPasswordConfirmation() {
-        return passwordConfirmation;
-    }
-
-    public void setPasswordConfirmation(String passwordConfirmation) {
-        this.passwordConfirmation = passwordConfirmation;
     }
 }
