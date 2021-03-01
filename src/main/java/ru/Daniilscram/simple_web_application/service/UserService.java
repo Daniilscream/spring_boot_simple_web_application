@@ -1,6 +1,7 @@
 package ru.Daniilscram.simple_web_application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -30,6 +31,9 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Value("${hostname}")
+    private String hostname;
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
@@ -65,8 +69,9 @@ public class UserService implements UserDetailsService {
                     "Здравствуйте, %s! \n" +
                             "добро пожаловать в тестовый весенний ботинок \n" +
                             "если не в падлу, то перейдите по ссылке для активации электронного ящина \n"+
-                            "вот собственно ссыль: http://localhost:8080/activate/%s",
+                            "вот собственно ссыль: http://%s/activate/%s",
                     user.getUsername(),
+                    hostname,
                     user.getActivationCode()
             );
 
