@@ -12,9 +12,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Дом</a>
         </li>
+        <#if user??>
         <li class="nav-item">
            <a class="nav-link active" aria-current="page" href="/main">Сообщения</a>
          </li>
+         <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/user-messages/${currentUserId}">Мои сообщения</a>
+         </li>
+         </#if>
          <#if isAdmin>
          <li class="nav-item">
            <a class="nav-link active" aria-current="page" href="/user">Список пользователей</a>
