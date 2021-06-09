@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.service;
+package ru.Daniilscream.simple_web_application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,9 +8,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-import ru.Daniilscram.simple_web_application.domain.Role;
-import ru.Daniilscram.simple_web_application.domain.User;
-import ru.Daniilscram.simple_web_application.repository.UserRepository;
+import ru.Daniilscream.simple_web_application.domain.Role;
+import ru.Daniilscream.simple_web_application.domain.User;
+import ru.Daniilscream.simple_web_application.repository.UserRepository;
 
 import java.util.Arrays;
 import java.util.Collections;

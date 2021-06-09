@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.controller;
+package ru.Daniilscream.simple_web_application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import ru.Daniilscram.simple_web_application.domain.Message;
-import ru.Daniilscram.simple_web_application.domain.User;
-import ru.Daniilscram.simple_web_application.repository.MessageRepository;
+import ru.Daniilscream.simple_web_application.domain.Message;
+import ru.Daniilscream.simple_web_application.domain.User;
+import ru.Daniilscream.simple_web_application.repository.MessageRepository;
 
 import javax.validation.Valid;
 import java.io.File;

@@ -1,7 +1,7 @@
-package ru.Daniilscram.simple_web_application.repository;
+package ru.Daniilscream.simple_web_application.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import ru.Daniilscram.simple_web_application.domain.Message;
+import ru.Daniilscream.simple_web_application.domain.Message;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.config;
+package ru.Daniilscream.simple_web_application.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

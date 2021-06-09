@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.domain;
+package ru.Daniilscream.simple_web_application.domain;
 
 import org.hibernate.validator.constraints.Length;
 

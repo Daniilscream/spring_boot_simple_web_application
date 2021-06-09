@@ -1,8 +1,8 @@
 <#include "security.ftlh">
 
-<div class="row row-cols-3 row-cols-md-2 g-4 m-3">
+<div class="row row-cols-3 row-cols-md-2 g-4 m-3" id="message-list">
 <#list messages as message>
-        <div class="card my-3" style="width: 18rem;">
+        <div class="card my-3" style="width: 18rem;" data-id="${message.id}">
             <div class="m-2">
                 <span>${message.text}</span><br/>
                 <i>#${message.tag}</i>

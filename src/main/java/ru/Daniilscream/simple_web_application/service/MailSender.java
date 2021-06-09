@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.service;
+package ru.Daniilscream.simple_web_application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

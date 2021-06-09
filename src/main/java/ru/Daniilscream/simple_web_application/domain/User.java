@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.domain;
+package ru.Daniilscream.simple_web_application.domain;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -36,4 +36,5 @@
         <div class="navbar-text me-3"><#if user??>${name}<#else>Войдите или зарегистрируйтесь</#if></div>
         <@l.logout />
     </div>
+  </div>
 </nav>

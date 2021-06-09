@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.domain.dto;
+package ru.Daniilscream.simple_web_application.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

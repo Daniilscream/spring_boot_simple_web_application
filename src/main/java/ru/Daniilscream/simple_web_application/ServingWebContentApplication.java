@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application;
+package ru.Daniilscream.simple_web_application;
 
 
 import org.springframework.boot.SpringApplication;

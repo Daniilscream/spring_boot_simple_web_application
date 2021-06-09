@@ -18,9 +18,9 @@ ${message?ifExists}
         <input type="email" name="email" class="form-control" placeholder = "some@some.com" value="${email!''}"/>
         </div>
         </label>
-        </div>
+    </div>
 
-    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 
     <button type="submit" class="btn btn-primary">Сохранить</button>
 </form>

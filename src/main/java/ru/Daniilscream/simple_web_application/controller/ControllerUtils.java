@@ -1,4 +1,4 @@
-package ru.Daniilscram.simple_web_application.controller;
+package ru.Daniilscream.simple_web_application.controller;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
